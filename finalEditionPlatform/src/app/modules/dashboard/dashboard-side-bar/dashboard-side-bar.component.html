@@ -1,0 +1,46 @@
+<nav class="sidebar">
+    
+    <div class="col-md-3">
+        <h3 ><span class="badge badge-primary">Name : {{data.name}}<br><br>
+            Privilege : {{data.role}}
+        </span>
+        
+        </h3>
+    </div>
+        
+    <ul class="nav flex-column">
+        <li class="nav-item hvr-fade rounded mb-4 ">
+            <a class="nav-link hvr-icon-pulse-grow text-info font-weight-bold" routerLink="dashboardShow">
+                <i class="fas fa-desktop hvr-icon"></i>
+                <span class="ml-2 ">General View</span>
+            </a>
+        </li>
+        <li class="nav-item hvr-fade rounded mb-4 ">
+            <a class="nav-link hvr-icon-drop text-info font-weight-bold" routerLink="student_manager">
+                <i class="fas fa-user-graduate hvr-icon"></i>
+                <span class="ml-2 ">Student Manager</span>
+            </a>
+        </li>
+        <li class="nav-item hvr-fade rounded mb-4 ">
+            <a class="nav-link hvr-icon-rotate text-info font-weight-bold" routerLink="validation_space" >
+                <i class="fas fas fa-tasks hvr-icon"></i>
+                <span class="ml-2 ">Validation Space</span>
+            </a>
+        </li>
+        <li class="nav-item hvr-fade rounded mb-4 ">
+            <a class="nav-link hvr-icon-float-away text-info font-weight-bold" routerLink="account_manager">
+                <i class="fas fa-user-plus hvr-icon"></i>
+                <span class="ml-2 ">Acount Manager</span>
+            </a>
+        </li>
+       
+        <li class="nav-item hvr-fade rounded mb-4 ">
+            <a class="nav-link hvr-icon-rotate text-info font-weight-bold">
+                <i class="fab fa-readme hvr-icon"></i>
+                <span class="ml-2 ">Logs</span>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>

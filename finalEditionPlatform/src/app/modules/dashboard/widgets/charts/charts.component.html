@@ -1,0 +1,29 @@
+<div class="row chart-row-spec ml-3">
+    <div class="col-md-8 bg-chart ml-4 rounded">
+        <div class="line-chart-spec mt-4 ">
+            <canvas baseChart 
+                [datasets]="lineChartData" 
+                [labels]="lineChartLabels" 
+                [options]="lineChartOptions"
+                [colors]="lineChartColors" 
+                [legend]="lineChartLegend" 
+                [chartType]="lineChartType" 
+                [plugins]="lineChartPlugins">
+            </canvas>
+        </div>
+    </div>
+    <div class="col-md-3 bg-chart ml-4 rounded ">
+        <div class=" mt-3 radar-chart-spec">
+            <canvas baseChart 
+                [datasets]="radarChartData" 
+                [labels]="radarChartLabels" 
+                [options]="radarChartOptions"
+                [colors]="radarChartColors" 
+                [legend]="radarChartLegend" 
+                [chartType]="radarChartType" 
+                [plugins]="radarChartPlugins">
+            </canvas>
+        </div>
+    </div>
+   
+</div>

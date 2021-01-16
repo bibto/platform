@@ -1,0 +1,74 @@
+    <div class="form-group ">
+        <div class="d-flex flex-md-row">
+        <div class="item mr-3">
+            <div class="row mb-2">
+                <div class="col text-center">
+                    <input type="text" class="form-control" id="first_name" [(ngModel)]="student.first_name" [disabled]="input.state" #stateFirstName="ngModel">
+                </div>
+                <div class="col text-center">
+                    <input type="text" class="form-control" id="first_name" [(ngModel)]="student.last_name" [disabled]="input.state" #stateLastName="ngModel">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <input type="email" class="form-control" [(ngModel)]="student.email" [disabled]="input.state" #stateEmail="ngModel">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <input type="text" class="form-control" [(ngModel)]="student.phone_number" [disabled]="input.state" #statePoneNumber="ngModel">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <input type="text" class="form-control" [(ngModel)]="student.country" [disabled]="true" >
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" [(ngModel)]="student.gendre" [disabled]="true">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <input type="text" class="form-control" [(ngModel)]="student.field" [disabled]="input.state"  #stateField="ngModel">
+                </div>
+                <div class="col">
+                    <input type="date" id="searchByDate" class="form-control"  [(ngModel)]="student.date_of_start" [disabled]="input.state" #stateOfDate="ngModel">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <input type="text" class="form-control" [(ngModel)]="agentname" [disabled]="true">
+                </div> 
+                <div class="col">
+                    <select name="assistant" id="assistant" class="form-control" [(ngModel)]="agentid" [disabled]="input.state" #stateAgent="ngModel" >
+                        <option value="" disabled selected >Affect To </option>
+                        <option  *ngFor="let agent of agentslist" [value]="agent.agentid" >{{agent.name}}</option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="item mr-5">
+            <p>file zone not complete</p>
+            <select name="statuss" id="statuss" class="form-control" [(ngModel)]="student.status" [disabled]="input.state" #stateStatus="ngModel" >
+                <option  *ngFor="let status of statusoptions" [value]="status" >{{status}}</option>
+
+            </select>{{student.status}}
+
+        </div>
+        <div class="item item-comment-spec">
+            <div class="row mb-2">
+                <label for="comments">Comments</label>
+                <textarea id="comments" cols="20" rows="3" class="form-control" [disabled]="input.state" [(ngModel)]="student.comment"></textarea>
+            </div>
+            <div class="row mb-2">
+                <label for="tasks">Tasks</label>
+                <textarea id="tasks" cols="20" rows="3" class="form-control" [disabled]="input.state" [(ngModel)]="student.task"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-success float-right" (click)="updatestudent()" [disabled]="!(stateFirstName.dirty||stateLastName.dirty||stateEmail.dirty||statePoneNumber.dirty||stateField.dirty||stateOfDate.dirty||stateAgent.dirty||stateStatus.dirty)"> Update</button>
+            <button class="btn btn-danger" (click)="form_state()">{{input.action}}</button>
+        </div>
+    </div>
+    
+    </div>

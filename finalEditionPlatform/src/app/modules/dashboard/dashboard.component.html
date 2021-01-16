@@ -1,0 +1,15 @@
+<div class="container-fluid outlet-spec">
+    <app-dashborad-header></app-dashborad-header>
+    <div class="row d-flex">
+        <div class="col-md-2 spec-side-bar">
+            <app-dashboard-side-bar [data]="user"></app-dashboard-side-bar>
+        </div>
+        <div class=" col-md-10">
+            
+            <div class="spc">
+                <router-outlet></router-outlet>
+            </div>
+
+        </div>
+    </div>
+</div>

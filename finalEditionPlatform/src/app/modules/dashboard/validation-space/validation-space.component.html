@@ -1,0 +1,62 @@
+<div class="spec">
+    <div class="router-outlet-spec mb-5">
+        <router-outlet></router-outlet>
+    </div>
+    
+        <form action="">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <h6 class=""> Filter By Id</h6>
+                        <input type="text" class="form-control" id="searchById" placeholder="Enter The Student ID">
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h6 class=""> Filter By Start Date</h6>
+                            <input type="date" id="searchByDate" name="searchBystartdate"  class="form-control" [(ngModel)]="filter.date_of_start">
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="row mb-3">
+                            <h6 class=""> Filter By Registration Date</h6>
+                            <input type="date" name="searchByDate" id="searchByDate" class="form-control" [(ngModel)]="filter.registrationdate">
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h6 class=""> Filter By Validity</h6>
+                    <select name="searchByStatus" id="searchByStatus" class="form-control" [(ngModel)]="filter.status">
+                        <option *ngFor="let status of statusoptions" [value]="status">{{status}}</option>
+                    </select>
+                    </div>
+                    
+                </div>
+                <button type="submit" class="btn btn-success mt-3 float-right mb-3" (click)="searchByFilter()">Show students</button>
+            </div>
+            
+        </form>
+        <table class="table table-striped table-dark mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Fist Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Field</th>
+                    <th scope="col">Date Registration</th>
+                    <th scope="col">Assistant</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Profile</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of studentsArray">
+                    <td>{{student.first_name}}</td>
+                    <td>{{student.last_name}}</td>
+                    <td>{{student.country}}</td>
+                    <td>{{student.field}}</td>
+                    <td>{{student.registrationdate[0]}}</td>
+                    <td>{{student.agentname}}</td>
+                    <td>{{student.status}}</td>
+                    <td><a routerLink="student_profile/{{student._id}}" (click)="pushStudentToProfile(student._id)">View</a></td>
+              </tr>
+                
+        </tbody>
+        </table>
+</div>

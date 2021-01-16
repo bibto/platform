@@ -1,0 +1,119 @@
+    <div class="container-fluid">
+        <div class="row mt-5">  
+    <div class="card bg-dark text-white float-left col-md-6 spec-card-1">
+        <div class="card-header ">
+            <div class="row justify-content-center">
+                <h4>Important Notice !</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">This Is To Inform All The Condidates </h3>
+            <p class="card-text ">
+                You have to insert a real information here ( No fake Names or fake documents).
+             </p>
+             <p class="card-text">
+                You have to provide us with a valid documents.
+             </p>
+             <p class="card-text">
+                You have to upload a PDF Documents Format.
+             </p>
+             <p class="card-text">
+                 You have to regiter with only one profile 
+             </p>
+             <p class="card-text font-weight-bold">
+                 The registration will be rejected automatically if the rules are not respected,you have to
+                 contact us if this is done by fault.
+             </p>
+        </div>
+    </div>
+    <!-- form registration -->
+    <div class="float-right spec-form col-md-6">
+        <form  #reg_form="ngForm">
+            <div class="form-group">
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+                <input type="text" class="form-control " placeholder="First Name" name="first_name" id="first_name" [(ngModel)]="student.first_name"  #state="ngModel" required>{{state.valid}}
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Last Name" name="last_name" id="last_name" [(ngModel)]="student.last_name" required>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Email" name="email" id="email" [(ngModel)]="student.email" required>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Phone Number" name="phone_number" id="phone_number" [(ngModel)]="student.phone_number" required>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="gendre" id="male" value="male" [(ngModel)]="student.gendre" required>
+                <label for="male" class="form-check-label font-weight-bold">Male</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="gendre" id="female" value="female" [(ngModel)]="student.gendre" required>
+                <label for="female" class="form-check-label font-weight-bold">Female</label>
+            </div>
+        </div>
+        </div>
+        
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+                <select name="country" id="country" [(ngModel)]="student.country" class="custom-select custom-select-lg mb-3" required>
+                    <option *ngFor="let country of countryList" [value]="country">{{country}}</option>
+                </select>
+            </div> 
+        </div>
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+                <select name="field" id="field"  [(ngModel)]="student.field" class="custom-select custom-select-lg mb-3" required>
+                    <option *ngFor="let field of fieldList" [value]="field">{{field}}</option>
+                </select>  
+            </div>
+            <div class="col">
+                <input type="date" id="searchByDate" class="form-control"  [(ngModel)]="student.date_of_start" name="date_of_start" required>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+                <div class="custom-file">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <input type="file" class="custom-file-input" id="customFile">
+                  </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+                <div class="custom-file">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <input type="file" class="custom-file-input" id="customFile">
+                  </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+                <div class="custom-file">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <input type="file" class="custom-file-input" id="customFile">
+                  </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-1">
+            <div class="col">
+                <div class="custom-file">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <input type="file" class="custom-file-input" id="customFile">
+                  </div>
+            </div>
+        </div>
+    </div>
+    <button (click)="submitFunc()" type="submit" [disabled]="!reg_form.form.valid" class="btn btn-primary float-right">Register</button>
+    </form>
+    </div>
+</div>
